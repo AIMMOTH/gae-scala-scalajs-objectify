@@ -1,0 +1,58 @@
+<html>
+<head></head>
+<body>
+
+	<h1>Haj</h1>
+
+	<p>Use compiled script from ScalaJs to make calculation.</p>
+
+	<input type="number" onchange="calculate(this)"><span id="result"></span>
+
+	<p>Click in textarea below to send GET to the scala filter.</p> 
+
+	<textarea onclick="stuff(this)"></textarea>
+
+	<p>Simple GET and POST</p>
+	
+	<input type="button" value="POST" onclick="postToScala()">
+	
+	<textarea onclick="getFromScala(this)"></textarea>
+
+	<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+	
+	<script src="sbt-for-scala-js-build-fastopt.js"></script>
+	
+	<script type="text/javascript">
+		function calculate(element) {
+			// Using compiled script
+			var result = io.cenet.scalajs.ScalaJs().total(parseInt(element.value));
+			
+			$("#result").text(result);
+		}
+		function stuff(element) {
+			$.ajax("/scala", {
+				method: "GET",
+				success: function(data, status, xhr) {
+					element.value = JSON.stringify(data, null, 2);
+				},
+				error: function(xhr, status, error) {
+					console.error(status + ":" + error);
+				}
+			});
+		}
+		function postToScala() {
+			$.ajax("/api", {
+				method: "POST"
+			});
+		}
+		function getFromScala(element) {
+			$.ajax("/api", {
+				method: "GET",
+				success: function(data) {
+					element.value = JSON.stringify(data, null, 2);
+				}
+			});
+		}
+	</script>
+</body>
+</html>

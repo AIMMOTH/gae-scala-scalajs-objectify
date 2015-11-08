@@ -1,10 +1,10 @@
-Google App Engine with Scala and ScalaJS
-========================================
+Google App Engine with Scala, ScalaJS and Objectify
+===================================================
 
 Scala
 -----
 
-There is a simple implementation of a Filter in Scala.
+Since GAE is using Java 7, Scala needs to be set to 2.10.x. There is a simple Scala implementation of a Filter using Objectify.
 
 
 ScalaJs

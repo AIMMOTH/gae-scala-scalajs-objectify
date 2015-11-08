@@ -112,6 +112,18 @@
 						</configuration>
 					</execution>
 					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>src/main/scalajs</source>
+							</sources>
+						</configuration>
+					</execution>
+					<execution>
 						<id>add-test-source</id>
 						<phase>generate-sources</phase>
 						<goals>
@@ -120,6 +132,18 @@
 						<configuration>
 							<sources>
 								<source>src/test/scala</source>
+							</sources>
+						</configuration>
+					</execution>
+					<execution>
+						<id>add-test-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-test-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>src/test/scalajs</source>
 							</sources>
 						</configuration>
 					</execution>

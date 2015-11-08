@@ -14,11 +14,9 @@ import com.google.gson.Gson
 class ScalaFilter extends Filter {
   
   
-  override def init(config: FilterConfig) = {
-  }
+  override def init(config: FilterConfig) = {}
   
-  override def destroy = {
-  }
+  override def destroy = {}
   
   override def doFilter(req : ServletRequest, res : ServletResponse, chain : FilterChain) = {
     val request = req.asInstanceOf[HttpServletRequest]
